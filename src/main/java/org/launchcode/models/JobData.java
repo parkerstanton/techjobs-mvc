@@ -5,6 +5,7 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -107,7 +108,7 @@ public class JobData {
             for (String key : row.keySet()) {
                 String aValue = row.get(key);
 
-                if (aValue.toLowerCase().contains(value.toLowerCase())) {
+                if (aValue.toLowerCase().contains(aValue.toLowerCase())) {
                     jobs.add(row);
 
                     // Finding one field in a job that matches is sufficient

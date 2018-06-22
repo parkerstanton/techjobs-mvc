@@ -37,6 +37,17 @@
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+    <span th:if="${jobs}">
+        <!--You need above line b/c the landing page won't display properly when the jobs list is null. DUH*/-->
+        <p th:text ="${jobs.size()} + 'results'" ></p>
+        <table class="table table-bordered" th:each = "job : ${jobs}">
+            <tr th:each="key : ${job.keySet()}">
+                <td th:text = "${job.get(key)}"></td>
+            </tr>
+
+        </table>
+    </span>
+
 
 </div>
 

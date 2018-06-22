@@ -11,7 +11,20 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #3 - Use the same list display from search.html -->
+    <span th:if="${jobs}">
+        <p th:text ="${jobs.size()} + 'results'" ></p>
+        <!--/*Spits out raw # of results for search*/-->
+        <table class="table table-bordered" th:each = "job : ${jobs}">
+            <tr th:each="key : ${job.keySet()}">
+                <!--Loop through the hashmap thingamabob to get all the keys to display. */-->
+                <td th:text = "${job.get(key)}"></td>
+                <!--/*Display each key that we get through the th:each loop*/-->
 
+            </tr>
+
+
+        </table>
+    </span>
 </div>
 
 </body>

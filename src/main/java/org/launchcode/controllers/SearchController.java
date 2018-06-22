@@ -24,7 +24,7 @@ public class SearchController {
     }
     // TODO #1 - Create handler to process search request and display results
     @RequestMapping(value="results")
-    public String searchresults (@RequestParam String searchTerm, @RequestParam String searchType, Model model) {
+    public String searchresults (@RequestParam String searchType, @RequestParam String searchTerm, Model model) {
         /*Same functionality as list controller found in other tab. Need to add category of search at top
         Categories found in ListController tab*/
         ArrayList<HashMap<String, String>> jobs;
